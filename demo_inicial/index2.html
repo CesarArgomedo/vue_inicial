@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion a Directivas en VueJs</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="miApp">
+        <h1>Frases de Bill Gates <small>{{ nuevaFrase }}</small></h1>
+
+        <input type="text" id="Frasenueva" v-model="nuevaFrase" v-on:keyPress.enter="agregarFrase">
+
+        <hr>
+
+        <ul>
+            <li v-for="({frase,autor}, index) in frases" :key="index">
+                <span >{{ index + 1  }} -  {{ frase }}</span>
+                <!-- <blockquote v-if="autor">{{ autor }}</blockquote> -->
+                <blockquote v-show="true">{{ autor }}</blockquote>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <script src="app.js"></script> 
+</body>
+</html>
